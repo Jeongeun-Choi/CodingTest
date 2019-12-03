@@ -13,7 +13,7 @@ for i in range(N):
 
 q = deque() #deque 사용 
 check = [[False]*M for _ in range(N)]   #미로를 들렀으면 True로 변환
-dis = [[0]*M for _ in range(N)]         #거리 값...?
+dis = [[0]*M for _ in range(N)]         #해당 노드까지의 거리 값...?
 
 # dx[0], dy[0] 오른쪽
 # dx[1], dy[1] 왼쪽
