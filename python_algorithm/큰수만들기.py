@@ -1,6 +1,6 @@
-number="1924"
+number="4177252841"
 
-k = 2
+k = 4
 count = 0
 index = 0
 num = list(number)
@@ -8,7 +8,7 @@ answer = []
 
 for i in range(1, len(num)):
     if count == k: 
-        if(i != len(num)-1):
+        if(i != len(num)):
             for j in range(i, len(num)):
                 answer.append(num[j])
         break;
@@ -28,7 +28,7 @@ for i in range(1, len(num)):
         if(i-1 > 0 and answer[index] == num[i - 1]): 
             answer.pop()
             count += 1
-        #나중에 풀래 ㅠㅠ
+        #나중에 풀래 ㅠㅠ 아아아 그리디 너무 어렵다
 _str = ""
 
 for i in answer:
