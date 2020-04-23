@@ -9,8 +9,14 @@ N = int(input())
 first = 1
 second = 2
 
-for i in range(2, N):
-    tmp = first
-    first = second
-    second = (tmp + second) % 15746
-print(second)
+if N == 1:
+    print(first)
+elif N == 2:
+    print(second)
+else :
+    for i in range(2, N):
+        tmp = first
+        first = second
+        second = (tmp + second) % 15746
+    print(second)
+
