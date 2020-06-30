@@ -7,6 +7,8 @@ N_Cards.sort()
 
 dic = {}
 
+#딕셔너리를 이용해서 푼대....
+#try, except 구문이 존재한다... 유용하게 쓰이지 않을까?
 for card in N_Cards:
     try :
         dic[card] += 1
