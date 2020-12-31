@@ -1,35 +1,28 @@
-//js로는 유효 숫자 범위가 넘어서 풀지 못함 ㅋㅎㅋㅎㅋㅎ;;;
 const n = 6;
 const times = [7, 10];
 
-function sortTimes(a, b) {
-    return a - b;
-}
-
 function solution(n, times) {
-    times.sort(sortTimes);
-    let answer = 0;
-    let left = 1;   //1부터
-    let right = times[times.length-1] * n;  //최악의 경우를 생각
-    let mid = 0;
-    let count = 0;
+  let maxTime = Math.max(...times) * n;
+  let minTime = 0;
+  let countPerson = 0;
+  let answer = maxTime;
 
-    while(left < right){
-        mid = parseInt((left+right)/2);
-        times.map(time => {
-            count = count + parseInt(mid / time);
-        })
-        if (count > n){
-            right = mid - 1;
-        } else if(count < n){
-            left = mid + 1;
-        } else{
-            answer = mid;
-            right = mid - 1;
-        }
-        count = 0;
+  while (maxTime >= minTime) {
+    let mid = Math.floor((maxTime + minTime) / 2);
+    countPerson = 0;
+
+    for (const time of times) {
+      countPerson += Math.floor(mid / time);
     }
-    return answer;
+
+    if (countPerson >= n) {
+      answer = Math.min(answer, mid);
+      maxTime = mid - 1;
+    } else {
+      minTime = mid + 1;
+    }
+  }
+  return answer;
 }
 
 console.log(solution(n, times));
